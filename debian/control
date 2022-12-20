@@ -1,0 +1,30 @@
+Source: ipvsadm
+Section: net
+Priority: optional
+Maintainer: Alexander Wirt <formorer@debian.org>
+Standards-Version: 4.4.1
+Homepage: https://git.kernel.org/pub/scm/utils/kernel/ipvsadm/ipvsadm.git
+Vcs-Browser: https://github.com/formorer/pkg-ipvsadm
+Vcs-Git: https://github.com/formorer/pkg-ipvsadm.git
+Build-Depends: debhelper (>= 11),
+               libnl-3-dev,
+               libnl-genl-3-dev,
+               libpopt-dev,
+               pkg-config,
+               po-debconf
+
+Package: ipvsadm
+Architecture: any
+Depends: lsb-base (>= 3.0-6), ${misc:Depends}, ${shlibs:Depends}
+Conflicts: lvs
+Replaces: lvs
+Suggests: heartbeat, keepalived, ldirectord
+Description: Linux Virtual Server support programs
+ The Linux Virtual Server (lvs or IPVS) is a highly scalable and highly
+ available server built on a cluster of real servers. The architecture of the
+ cluster is transparent to end users, and the users see only a single virtual
+ server.
+ .
+ This package provides some support programs necessary to implement a virtual
+ server under Linux. With the addition of the mon and heartbeat packages it is
+ possible to implement a complete high-availability solution for Linux.

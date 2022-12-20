@@ -1,0 +1,323 @@
+ipvsadm (1:1.31-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Sat, 26 Nov 2022 21:06:36 +0800
+
+ipvsadm (1:1.31-1) unstable; urgency=medium
+
+  * [950ed21] New upstream version 1.31
+  * [e35ba70] Refresh patch
+  * [5639279] Bump standards version
+
+ -- Alexander Wirt <formorer@debian.org>  Sun, 05 Jan 2020 21:33:49 +0100
+
+ipvsadm (1:1.29-1) unstable; urgency=medium
+
+  * [b30c9aa] New upstream version 1.29
+    (Closes: #903935)
+  * [f33b1cc] Bump standards version
+  * [06cf313] Priority extra is now optional
+  * [28cd1fe] Bump to dh11
+  * [776e7b4] package doesn't build with parallel
+  * [a3d3994] Add gitlab-ci file
+  * [b82b9b0] Add snapshot changelog
+  * [c1c00d7] Add homepage field
+  * [4af29a6] Remove trailing whitespace
+  * [8cdf09c] I found even more whitespace
+  * [8f39cde] Verify gpg sig on upstream tarball
+  * [0e9779f] use specific GPL version in copyright
+  * [07d28a4] Remove obsolete lintian override
+  * [6a7e974] We don't use dpatch anymore, kick README.source
+  * [98911a8] Add override file - we don't have a changelog
+  * [aa1dc89] Fix syncid on daemon invocation (Closes: #649106, #788345, #808950)
+  * [7695a4a] Add a patch to enhance weight parameter to INT_MAX.
+    Thanks to Francois Lallart <fraff@free.fr> (Closes: #814348)
+
+ -- Alexander Wirt <formorer@debian.org>  Sun, 05 Aug 2018 09:21:46 +0200
+
+ipvsadm (1:1.28-2) experimental; urgency=medium
+
+  * [2c4e022] Update watch file
+  * [4c4c557] Add VCS header
+
+ -- Alexander Wirt <formorer@debian.org>  Sat, 14 Feb 2015 06:41:14 +0100
+
+ipvsadm (1:1.28-1) experimental; urgency=medium
+
+  * [dfdf261] Imported Upstream version 1.28
+    (Closes: #775930)
+    - fix rule loading on i386 (Closes: #750549)
+
+ -- Alexander Wirt <formorer@debian.org>  Wed, 11 Feb 2015 14:10:18 +0100
+
+ipvsadm (1:1.26-3) unstable; urgency=medium
+
+  * [8fe73cf] Move to quilt 3.0
+  * [9ae82d1] wrap-and-sort
+  * [d8b7ba7] Move to debhelper compat v9
+  * [450ce1d] Remove obsolete dpatch patches
+  * [86caa7e] Remove obsolete templates
+  * [8c6fbd7] Bump standards version
+  * [6972aa0] Add deps for libnl3
+  * [9a354ee] Add syncid to default file (Closes: #649106)
+  * [f57062e] Build against libnl3 (Closes: #653021)
+  * [ebeed1d] Fix displayed nodes (Closes: #685495, #706680)
+  * [c0e7408] Imported Debian patch 1:1.26-2
+  * [25fb091] Revert "Imported Debian patch 1:1.26-2"
+  * [be1c118] Fix build-deps
+  * [41027f9] Bump standards version (no changes)
+  * [d0c8111] Add a patch to support LDFLAGS in Makefile. This adds support for hardening.
+
+ -- Alexander Wirt <formorer@debian.org>  Sat, 01 Mar 2014 23:36:46 +0100
+
+ipvsadm (1:1.26-1) unstable; urgency=low
+
+  * [084f2b6] Imported Upstream version 1.26
+    - Fix display of active connections (Closes: #574587)
+  * [3a0f1e2] Use source format 1.0
+  * [d5ca6cd] Remove debconf configuration (Closes: #656652)
+  * [c9ac6fd] Update NEWS entry
+  * [4759bff] Update default file with new options
+  * [ee63b63] Add support for specifying syncid in /etc/default/ipvsadm
+    (Closes: #649106)
+  * [6a47317] Cleanup upstream provided debian/files
+  * [028471c] Update disabled message of initscript
+  * fix runlevels of initscript (Closes: #582821)
+  * [5481cda] Add ipvs and IPVS to description (Closes: #572315)
+  * [8b71ffc] Apply patch for startup options of ipvsadm (Closes: #504001)
+
+ -- Alexander Wirt <formorer@debian.org>  Wed, 22 Feb 2012 22:03:47 +0100
+
+ipvsadm (1:1.25) unstable; urgency=low
+
+  * New upstream version (Closes: #540423)
+  * Fix pending l10n issues. Debconf translations:
+  * Vietnamese (Clytie Siddall).  Closes: #513582
+  * Spanish (Francisco Javier Cuadrado).  Closes: #529727
+  * Arabic (Ossama M. Khayat).  Closes: #552384
+  * Japanese (Hideki Yamane (Debian-JP)).  Closes: #553028
+
+ -- Alexander Wirt <formorer@debian.org>  Sun, 08 Nov 2009 14:16:20 +0100
+
+ipvsadm (1:1.24-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n issues. Debconf translations:
+    - Swedish. Closes: #491945
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 21 Oct 2008 05:47:28 +0200
+
+ipvsadm (1:1.24-2) unstable; urgency=low
+
+  * Update german debconf translation (Closes: #485451)
+
+ -- Alexander Wirt <formorer@debian.org>  Tue, 10 Jun 2008 08:47:02 +0200
+
+ipvsadm (1:1.24-1) unstable; urgency=low
+
+  * New maintainer
+  * Remove support for 2.2 and 2.4 kernels
+  * Move from cdbs to debhelper
+  * Make initscript LSB conform  (Closes: #466256)
+  * Bump standards version
+  * Don't mark default as translateable
+  * Don't limit names of interfaces. This is useless in days where interfaces
+    can be renamed and so on. (Closes: #298375)
+  * Remove bashism in postinst (Closes: #411253)
+  * Fix /etc/init.d/ipvsadm stop (Closes: #296668)
+  * Don't use a shellwrapper anymore for ipvsadm (Closes: #402207)
+  * Disable autosaving of rules (see NEWS.Debian) (Closes: #337207, #275986)
+  * Use consistent versioning (Closes: #402728)
+  *
+  * Allow daemon to be in master and backup mode simultaneously
+    (Closes: #401013)
+  * After translation round update translations.
+    (Closes: #473717, #473723, #473789, #473887, #474359, #474376, #474437)
+    alse Closes: #475307, #476791, #477820, #480206
+
+ -- Alexander Wirt <formorer@debian.org>  Sun, 30 Mar 2008 15:15:17 +0200
+
+ipvsadm (1.24+1.21-1.4) unstable; urgency=high
+
+  * Non-maintainer upload.
+
+  [ Pierre Habouzit ]
+  * Move ipvs detection into the postinst, so that we can rely on the ipvsadm
+    tool, guard that call to avoid any problems. (Closes: #408245).
+
+  [ Mohammed Adnène Trojette ]
+  * High urgency for RC bug fixing.
+  * Update FSF address in debian/copyright.
+
+ -- Mohammed Adnène Trojette <adn+deb@diwi.org>  Tue, 13 Feb 2007 19:12:11 +0100
+
+ipvsadm (1.24+1.21-1.3) unstable; urgency=low
+
+  * Non-maintainer upload
+    - Run ipvsadm before checking for /proc/net/ip_vs_conn
+      to avoid falsely reporting that ipvs is unavailable when
+      it is built as a module
+      (closes: 329482)
+
+ -- Simon Horman <horms@debian.org>  Thu, 30 Nov 2006 15:45:51 +0900
+
+ipvsadm (1.24+1.21-1.2) unstable; urgency=low
+
+  * Non-maintainer upload to fix pending l10n-related issues
+  * Depend on debconf | debconf-2.0 to allow the cdebconf transition
+    Closes: #331864
+  * Updated debconf tranlations:
+    - Vietnamese. Closes: #312032
+    - Updated Brazilian Portuguese. Closes: #295103
+    - Added Dutch. Closes: #295665
+    - Added Czech. Closes: #316998, #317002
+    - Added Swedish. Closes: #336737
+    - Added Polish. Sent during the NMU campaign.
+    - Added Italian. Sent during the NMU campaign.
+    - Added Russian. Sent during the NMU campaign.
+    - Added Norwegian Bokmål. Sent during the NMU campaign.
+      Closes: #396103
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 17 Oct 2006 09:04:57 +0200
+
+ipvsadm (1.24+1.21-1.1) unstable; urgency=low
+
+  * Non-maintainer upload as requested by Joerg Wendland
+  * Remove bogus check for ip_vs proc file, which
+    typically won't exist on systems with a modular kernel.
+    (closes: Bug#329482)
+
+ -- Simon Horman <horms@debian.org>  Sat, 24 Sep 2005 14:45:53 +0900
+
+ipvsadm (1.24+1.21-1) unstable; urgency=low
+
+  * Pack upstream version 1.24 (for 2.6 kernels), 1.21 (for 2.4 kernels)
+    and 1.21-11 (for kernels >= 2.4.29) together and provide a wrapper
+    script that chooses the correct binary to run depending on the kernel
+    version.
+    (closes: Bug#270774)
+  * Include new french debconf translation.
+    (closes: Bug#269105)
+
+ -- Joerg Wendland <joergland@debian.org>  Tue,  8 Feb 2005 11:09:24 +0100
+
+ipvsadm (1.24-1) unstable; urgency=low
+
+  * New upstream version.
+    (closes: Bug#240195)
+  * New maintainer. Thanks to nefsall maintaining this package
+    until now. This is a package hijacking.
+    (closes: Bug#262221)
+  * debian/rules:
+    Change build system to CDBS.
+  * debian/watch:
+    Added.
+  * Rework debconf templates and use po-debconf.
+    (closes: Bug#258719)
+  * debian/control:
+    - Remove Suggests: kernel-patch-2.4-ipvs since IPVS is included
+      in current 2.4 and 2.6 kernels.
+    - Add Suggests: keepalived for this is an alternative to heartbeat
+      and features IPVS support.
+    - Add Build-Depends: po-debconf.
+    - Bump Standards-Version to 3.6.1.0, no changes required.
+  * po/de.po:
+    Add German debconf templates.
+  * Use newer version of ip_vs.h from 2.6 kernels.
+
+ -- Joerg Wendland <joergland@debian.org>  Wed, 25 Aug 2004 03:30:24 +0200
+
+ipvsadm (1.21release6-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Sync header file (ip_vs.h) to IPVS version 1.0.9 (Kernel 2.4.20).
+  * Added two scheduling algorithms (SED and NQ) to SCHEDULERS.
+
+ -- KiHyeon Seo <nefsall@debian.org>  Fri, 13 Jun 2003 13:09:50 +0900
+
+ipvsadm (1.21release4-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Sync header file (ip_vs.h) to IPVS version 1.0.8 (Kernel 2.4.20).
+
+ -- KiHyeon Seo <nefsall@debian.org>  Mon, 21 Apr 2003 13:10:20 +0900
+
+ipvsadm (1.21release3-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Sync header file (ip_vs.h) to IPVS version 1.0.7 (Kernel 2.4.19).
+  * debian/ipvsadm.templates: Updated. (Thanks, ??? <karsten@freerun.com>,
+    closes: #163353)
+
+ -- KiHyeon Seo <nefsall@debian.org>  Thu, 12 Dec 2002 03:11:35 +0900
+
+ipvsadm (1.21release2-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Sync header file (ip_vs.h) to IPVS version 1.0.5 (Kernel 2.4.19).
+
+ -- KiHyeon Seo <nefsall@debian.org>  Sat, 17 Aug 2002 13:27:49 +0900
+
+ipvsadm (1.21release1-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Sync header file (ip_vs.h) to IPVS version 1.0.4 (Kernel 2.4.18).
+
+ -- KiHyeon Seo <nefsall@debian.org>  Wed, 24 Jul 2002 01:35:59 +0900
+
+ipvsadm (1.20release6-2) unstable; urgency=low
+
+  * debian/ipvsadm.templates: Added Brazilian Portuguese (pt_BR)
+    translation. (Andre Luis Lopes <andrelop@ig.com.br>)
+    (closes: #141534)
+  * Sync header file (ip_vs.h) to IPVS version 1.0.2 (Kernel 2.4.18).
+
+ -- KiHyeon Seo <nefsall@debian.org>  Tue,  9 Apr 2002 12:04:45 +0900
+
+ipvsadm (1.20release6-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Sync header file (ip_vs.h) to IPVS version 1.0.1 (Kernel 2.4.18).
+
+ -- KiHyeon Seo <nefsall@debian.org>  Thu, 28 Mar 2002 03:14:00 +0900
+
+ipvsadm (1.20release5-2) unstable; urgency=low
+
+  * Fixed debian/control, debian/ipvsadm.templates. (Because, Merged
+    kernel-patch-2.4.*-ipvs to kernel-patch-2.4-ipvs.)
+  * Sync header file (ip_vs.h) to IPVS version 1.0.0 (Kernel 2.4.18).
+
+ -- KiHyeon Seo <nefsall@debian.org>  Mon, 18 Mar 2002 01:20:13 +0900
+
+ipvsadm (1.20release5-1) unstable; urgency=low
+
+  * New Upstream Release. (closes: #71792)
+  * New Maintainer. (closes: #125779)
+  * Renamed to ipvsadm.
+  * Moved patch file to kernel-patch-2.4.x-ipvs.
+  * Added init script.
+  * Used debconf.
+  * Sync header file (ip_vs.h) to IPVS version 0.9.9 (Kernel 2.4.17).
+
+ -- KiHyeon Seo <nefsall@debian.org>  Mon,  4 Mar 2002 03:23:34 +0900
+
+lvs (0.9.7-2) unstable; urgency=low
+
+  * Package is orphaned (see bug #114113). Setting maintainer to QA.
+  * Suggest kernel-source virtual package rather than depending on specific
+    (now outdated) versions (closes: #71791, #102791).
+  * debian/copyright: Fix typos and correct upstream URL.
+  * debian/control: Minor wording improvements to package description.
+  * Policy version 3.5.6: add build dependencies and implement
+    DEB_BUILD_OPTIONS.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon,  1 Oct 2001 19:43:45 +0100
+
+lvs (0.9.7-1) unstable; urgency=low
+
+  * Initial Release.
+  * Mangled .orig.tar.gz to include patches for both 2.2.13 and 2.2.14
+    and gui for ipvsadm (lvs-gui.)
+
+ -- Federico Di Gregorio <fog@debian.org>  Wed, 26 Jan 2000 16:12:55 +0100

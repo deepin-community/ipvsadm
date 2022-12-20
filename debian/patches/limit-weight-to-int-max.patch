@@ -1,0 +1,32 @@
+Description: fix weight maximum value
+Bug-Debian: https://bugs.debian.org/814348
+ Ipvs kernel module accepts weight up to 2147483647 (INT_MAX).
+ This patch rises ipvsadm weight maximum value to INT_MAX instead of 65535.
+ .
+ ipvsadm (1:1.28-3) unstable; urgency=medium
+ .
+   * Upload to unstable
+Author: Francois Lallart <fraff@free.fr>
+
+--- a/ipvsadm.8
++++ b/ipvsadm.8
+@@ -386,7 +386,7 @@
+ .B -w, --weight \fIweight\fP
+ \fIWeight\fP is an integer specifying the capacity  of a server
+ relative to the others in the pool. The valid values of \fIweight\fP
+-are 0 through to 65535. The default is 1. Quiescent servers are
++are 0 through to 2147483647. The default is 1. Quiescent servers are
+ specified with a weight of zero. A quiescent server will receive no
+ new jobs but still serve the existing jobs, for all scheduling
+ algorithms distributed with the Linux Virtual Server. Setting a
+--- a/ipvsadm.c
++++ b/ipvsadm.c
+@@ -762,7 +762,7 @@
+ 		case 'w':
+ 			set_option(options, OPTC_WEIGHT);
+ 			if ((ce->dest.weight =
+-			     string_to_number(optarg, 0, 65535)) == -1)
++			     string_to_number(optarg, 0, INT_MAX)) == -1)
+ 				fail(2, "illegal weight specified");
+ 			break;
+ 		case 'x':
